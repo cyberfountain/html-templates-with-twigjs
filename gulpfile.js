@@ -51,7 +51,7 @@ task('ts:compile', shell.task('npx rollup --config rollup.config.js'))
 task('ts:compile:dev', shell.task('npx rollup --config rollup.config.js --config-dev'))
 task('ts:watch', shell.task('npx rollup --config rollup.config.js --config-dev --watch'))
 
-task('build', series(['ts:compile', 'scss']))
+task('build', series(['ts:compile', 'scss', 'twig']))
 task('dev', series([
     'public:clean',
     parallel([
